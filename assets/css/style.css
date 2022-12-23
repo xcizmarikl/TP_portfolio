@@ -1,0 +1,132 @@
+body {
+    background: rgb(2,0,36);
+    background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(139,115,209,1) 50%, rgb(162, 188, 250) 100%);
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    animation: body 1s linear;
+
+}
+nav {
+    border-bottom: 3px solid #ffffff;
+}
+.nav-link {
+    color: #ffffff;
+    font-size: 20px;
+}
+.logo {
+    width: 80px;
+}
+.member-img{
+    width: 150px;
+    height: 150px;
+}
+.header-image{
+    width: 600px;
+}
+p.lead{
+    font-size: 30px;
+}
+
+#header {
+    min-height: 100vh;
+}
+
+#about {
+    min-height: 100vh;
+}
+#team {
+    min-height: 100vh;
+}
+#document {
+    min-height: 100vh;
+}
+#contact {
+    min-height: 100vh;
+}
+
+
+  @keyframes body {
+    to {
+      background-color: rgb(19, 48, 97);
+    }
+  }
+  
+  .progress {
+    height: 3px;
+    width: 0%;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    animation: progress 1s linear;
+  }
+  @keyframes progress {
+    to {
+      background-color: rgb(20, 255, 226);
+      width: 100%;
+    }
+  }
+  
+  .cube-wrap {
+    --size: 30vmin;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    perspective: 100vmin;
+  }
+  .cube {
+    transform-style: preserve-3d;
+    transform: rotateX(0deg) rotateZ(45deg) rotateY(-45deg);
+    animation: cube 1s linear;
+  }
+  @keyframes cube {
+    to {
+      transform: rotateX(360deg) rotateZ(45deg) rotateY(-45deg);
+    }
+  }
+  
+  .side {
+    position: absolute;
+    width: var(--size);
+    height: var(--size);
+    background-color: #eee;
+    backface-visibility: visible;
+    top: calc(var(--size) * -.5);
+    left: calc(var(--size) * -.5);
+  }
+  .top {
+    background-color: #fff;
+    transform: rotateX(90deg) translateZ(calc(var(--size) * .5));
+  }
+  .bottom {
+    background-color: #999;
+    transform: rotateX(90deg) translateZ(calc(var(--size) * -.5));
+  }
+  .left {
+    background-color: #ccc;
+    transform: rotateY(90deg) translateZ(calc(var(--size) * .5));
+  }
+  .right {
+    background-color: #ddd;
+    transform: rotateY(90deg) translateZ(calc(var(--size) * -.5));
+  }
+  .front {
+    background-color: #aaa;
+    transform: translateZ(calc(var(--size) * .5));
+  }
+  .back {
+    background-color: #bbb;
+    transform: translateZ(calc(var(--size) * -.5));
+  }
+  
+  :root * {
+    /* Pause the animation */
+    animation-play-state: paused;
+    /* Bind the animation to scroll */
+    animation-delay: calc(var(--scroll) * -1s);
+    /* These last 2 properites clean up overshoot weirdness */
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+  }
